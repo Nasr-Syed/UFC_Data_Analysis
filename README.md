@@ -1,58 +1,138 @@
-# UFC Dataset Exploration & Analysis
+# UFC Fight Data Analysis & Visualization
 
-## 📌 Project Overview
-This project is an exploratory data analysis (EDA) of a UFC dataset, chosen out of my passion for MMA and my deep understanding of fight statistics. By leveraging my knowledge of significant strikes, fight odds, knockouts (KOs), reach advantages, and other critical fight metrics, I aim to uncover interesting insights and patterns from historical UFC fights.
+## Overview
+As a passionate UFC fan, I’ve always been fascinated by the statistics that define a fight—significant strikes, fight odds, knockouts (KOs), reach advantage, and more. This project is a deep dive into UFC fight data, where I leverage my analytical skills to extract insights using **Python, Pandas, PySpark, and Power BI**.
 
-## 📂 Data Extraction
-- The dataset is stored in a CSV file and will be loaded into a Pandas DataFrame.
-- Initial data inspection will be performed to understand structure, missing values, and data types.
+Through this project, I aim to showcase my ability to:
+- Extract and clean real-world fight data from a CSV file
+- Conduct **Exploratory Data Analysis (EDA)** and transformations using **Jupyter Notebooks**
+- Manipulate data using **Pandas** and **PySpark DataFrames**
+- Upload and visualize the cleaned dataset in **Power BI** for impactful insights
 
+This project will be hosted on GitHub to **demonstrate my Data Engineering and Data Analysis skills to potential employers**.
+
+---
+
+## 📂 Dataset Information
+- The dataset contains historical fight data, including fighter stats, fight outcomes, and betting odds.
+- Data points include:
+  - **Significant strikes**, **Takedowns**, **Submission attempts**
+  - **Reach advantage**, **Weight class**, **Fighter records**
+  - **Betting odds**, **Fight outcome** (Win/Loss/Draw)
+- Data is sourced from publicly available UFC datasets.
+
+---
+
+## 🔧 Tools & Technologies Used
+- **Python** (for data extraction & transformation)
+- **Jupyter Notebooks** (for EDA and data visualization)
+- **Pandas & PySpark** (for DataFrame operations and transformations)
+- **Power BI** (for interactive visualizations and dashboards)
+- **SQL** (for query optimization and analysis within Power BI)
+
+---
+
+## 📊 Data Processing Steps
+### **1️⃣ Data Extraction**
 ```python
-# Load necessary libraries
+# Load CSV file into a Pandas DataFrame
 import pandas as pd
-import numpy as np
 
-# Load the dataset
-file_path = "path_to_your_ufc_data.csv"
-df = pd.read_csv(file_path)
-
-# Display basic information about the dataset
-df.info()
+df = pd.read_csv('ufc_fight_data.csv')
 df.head()
 ```
 
-## 📊 Exploratory Data Analysis (EDA)
-- Cleaning the dataset (handling missing values, data inconsistencies, etc.).
-- Analyzing key statistics such as fighter win rates, striking accuracy, submission rates, and reach advantages.
-- Identifying trends related to fight outcomes and betting odds.
-
+### **2️⃣ Data Cleaning & Transformation**
 ```python
-# Perform data cleaning and transformation
-# (Fill in later with data cleaning and wrangling code)
+# Handle missing values
+# Convert data types if necessary
+
+# Example: Fill missing reach values with median
+
+df['reach'].fillna(df['reach'].median(), inplace=True)
 ```
 
-## 🔄 Data Transformations
-- Creating new calculated columns for deeper insights (e.g., strike differential, control time percentage, etc.).
-- Aggregating fight stats per fighter to analyze long-term trends.
-
+### **3️⃣ Exploratory Data Analysis (EDA)**
 ```python
-# Apply transformations
-# (Fill in later with DataFrame transformations)
+# Basic Statistics
+print(df.describe())
+
+# Distribution of Knockouts (KOs)
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.histplot(df['knockouts'], bins=10, kde=True)
+plt.title("Distribution of Knockouts (KOs)")
+plt.show()
 ```
 
-## 📈 Visualization & Power BI Integration
-- Exporting transformed data to be uploaded to Power BI.
-- Creating interactive visualizations in Power BI to effectively present findings.
-
+### **4️⃣ Data Transformation Using PySpark**
 ```python
-# Save processed data for Power BI analysis
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.appName("UFC_EDA").getOrCreate()
+spark_df = spark.createDataFrame(df)
+
+# Example: Convert weight class to lowercase
+from pyspark.sql.functions import lower
+
+spark_df = spark_df.withColumn("weight_class", lower(spark_df.weight_class))
+spark_df.show(5)
+```
+
+### **5️⃣ Save Processed Data for Power BI**
+```python
+# Save cleaned dataset for Power BI visualization
 df.to_csv("cleaned_ufc_data.csv", index=False)
 ```
 
-## 🚀 Goals & Outcomes
-- Showcase proficiency in **data engineering with DataFrames**, **EDA for analysis**, and **data manipulation skills**.
-- Display the results in an easy-to-understand format through **Power BI visualizations**.
-- Provide a strong portfolio piece for interviews, demonstrating expertise in working with real-world sports datasets.
+---
+
+## 📈 Power BI Visualizations
+Once the data is cleaned and processed, it will be imported into **Power BI** for further analysis and visualization.
+
+### **Key Visuals & Dashboards:**
+- **Fighter Performance Dashboard**
+  - Win/loss ratio across weight classes
+  - Fighter performance trends (significant strikes, takedowns, submissions)
+  - Impact of reach advantage on fight outcomes
+- **Betting Odds Analysis**
+  - Underdog vs. favorite win rates
+  - Correlation between odds and fight outcomes
+- **KO & TKO Analysis**
+  - Knockout rate by weight class
+  - Fighters with the highest KO percentages
 
 ---
-Stay tuned as I continue to update this project with insights and visualizations! 🏆🥊
+
+## 🚀 Next Steps: Expanding the Project
+To further enhance this project and make it **more appealing for Data Engineering (DE) and Data Analyst (DA) roles**, my next steps include:
+
+### 🔹 **Enhancing Power BI Integration**
+✅ **Create a UFC Power BI Dashboard** showcasing key fight statistics.
+✅ **Use DAX formulas** to calculate fighter win rates and performance metrics.
+✅ **Implement interactive filters** (e.g., by fighter, weight class, year).
+✅ **Deploy dashboard to Power BI Service** to demonstrate cloud reporting capabilities.
+
+### 🔹 **Adding More Data Engineering Features**
+✅ **Convert CSV to Parquet format** for improved performance.
+✅ **Automate data ingestion pipelines** using Python scripts.
+✅ **Optimize queries** inside Power BI for better performance (avoid subqueries when possible).
+✅ **Set up scheduled data refresh in Power BI Service** to automate updates.
+
+---
+
+## 📌 Why This Project Matters
+- This project **combines my passion for UFC** with **data analytics and engineering**.
+- It demonstrates my ability to **handle real-world data**, clean it, analyze it, and visualize insights.
+- It highlights my proficiency in **Python, SQL, PySpark, and Power BI**—all critical skills for **Data Engineer and Data Analyst roles**.
+
+### 🎯 **Goal**: Build a UFC Analytics Dashboard that can be used by analysts, fight promoters, and sports bettors.
+
+---
+
+## 📝 Author
+👤 **[Your Name]**  
+💼 Aspiring Data Engineer | Data Analyst  
+🔗 [LinkedIn Profile](#)  
+📂 [GitHub Repository](#)
