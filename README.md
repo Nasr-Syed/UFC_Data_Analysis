@@ -88,10 +88,8 @@ Once the data is cleaned and processed, it will be imported into **Power BI** fo
 
 ---
 
-## Next Steps: Expanding the Project
-To further enhance this project, my next steps include:
-
 ### **Enhancing Power BI Integration**
+What I aim to do next to further flesh out the project:
 - **Create a UFC Power BI Dashboard** showcasing key fight statistics.
 - **Use DAX formulas** to calculate fighter win rates and performance metrics.
 - **Implement interactive filters** (e.g., by fighter, weight class, year).
