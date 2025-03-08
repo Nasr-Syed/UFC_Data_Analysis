@@ -3,14 +3,6 @@
 ## Overview
 As a passionate UFC fan, I’ve always been fascinated by the statistics that define a fight—significant strikes, fight odds, knockouts (KOs), reach advantage, and more. This project is a deep dive into UFC fight data, where I leverage my analytical skills to extract insights using **Python, Pandas, PySpark, and Power BI**.
 
-Through this project, I aim to showcase my ability to:
-- Extract and clean real-world fight data from a CSV file
-- Conduct **Exploratory Data Analysis (EDA)** and transformations using **Jupyter Notebooks**
-- Manipulate data using **Pandas** and **PySpark DataFrames**
-- Upload and visualize the cleaned dataset in **Power BI** for impactful insights
-
-This project will be hosted on GitHub to **demonstrate my Data Engineering and Data Analysis skills to potential employers**.
-
 ---
 
 ## Dataset Information
@@ -20,15 +12,6 @@ This project will be hosted on GitHub to **demonstrate my Data Engineering and D
   - **Reach advantage**, **Weight class**, **Fighter records**
   - **Betting odds**, **Fight outcome** (Win/Loss/Draw)
 - Data is sourced from publicly available UFC datasets.
-
----
-
-## Tools & Technologies Used
-- **Python** (for data extraction & transformation)
-- **Jupyter Notebooks** (for EDA and data visualization)
-- **Pandas & PySpark** (for DataFrame operations and transformations)
-- **Power BI** (for interactive visualizations and dashboards)
-- **SQL** (for query optimization and analysis within Power BI)
 
 ---
 
