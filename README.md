@@ -97,10 +97,5 @@ To further enhance this project, my next steps include:
 - **Implement interactive filters** (e.g., by fighter, weight class, year).
 - **Deploy dashboard to Power BI Service** to demonstrate cloud reporting capabilities.
 
-### **Adding More Data Engineering Features**
-**Convert CSV to Parquet format** for improved performance.
-**Automate data ingestion pipelines** using Python scripts.
-**Optimize queries** inside Power BI for better performance (avoid subqueries when possible).
-**Set up scheduled data refresh in Power BI Service** to automate updates.
 
 
