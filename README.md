@@ -89,6 +89,7 @@ Once the data is cleaned and processed, it will be imported into **Power BI** fo
 ---
 
 ### **Enhancing Power BI Integration**
+---
 What I aim to do next to further flesh out the project:
 - **Create a UFC Power BI Dashboard** showcasing key fight statistics.
 - **Use DAX formulas** to calculate fighter win rates and performance metrics.
