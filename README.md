@@ -13,7 +13,7 @@ This project will be hosted on GitHub to **demonstrate my Data Engineering and D
 
 ---
 
-## 📂 Dataset Information
+## Dataset Information
 - The dataset contains historical fight data, including fighter stats, fight outcomes, and betting odds.
 - Data points include:
   - **Significant strikes**, **Takedowns**, **Submission attempts**
@@ -23,7 +23,7 @@ This project will be hosted on GitHub to **demonstrate my Data Engineering and D
 
 ---
 
-## 🔧 Tools & Technologies Used
+## Tools & Technologies Used
 - **Python** (for data extraction & transformation)
 - **Jupyter Notebooks** (for EDA and data visualization)
 - **Pandas & PySpark** (for DataFrame operations and transformations)
@@ -32,8 +32,8 @@ This project will be hosted on GitHub to **demonstrate my Data Engineering and D
 
 ---
 
-## 📊 Data Processing Steps
-### **1️⃣ Data Extraction**
+## Data Processing Steps
+### **Data Extraction**
 ```python
 # Load CSV file into a Pandas DataFrame
 import pandas as pd
@@ -42,7 +42,7 @@ df = pd.read_csv('ufc_fight_data.csv')
 df.head()
 ```
 
-### **2️⃣ Data Cleaning & Transformation**
+### **Data Cleaning & Transformation**
 ```python
 # Handle missing values
 # Convert data types if necessary
@@ -52,7 +52,7 @@ df.head()
 df['reach'].fillna(df['reach'].median(), inplace=True)
 ```
 
-### **3️⃣ Exploratory Data Analysis (EDA)**
+### **Exploratory Data Analysis (EDA)**
 ```python
 # Basic Statistics
 print(df.describe())
@@ -66,7 +66,7 @@ plt.title("Distribution of Knockouts (KOs)")
 plt.show()
 ```
 
-### **4️⃣ Data Transformation Using PySpark**
+### ** Data Transformation Using PySpark**
 ```python
 from pyspark.sql import SparkSession
 
@@ -80,7 +80,7 @@ spark_df = spark_df.withColumn("weight_class", lower(spark_df.weight_class))
 spark_df.show(5)
 ```
 
-### **5️⃣ Save Processed Data for Power BI**
+### ** Save Processed Data for Power BI**
 ```python
 # Save cleaned dataset for Power BI visualization
 df.to_csv("cleaned_ufc_data.csv", index=False)
@@ -88,7 +88,7 @@ df.to_csv("cleaned_ufc_data.csv", index=False)
 
 ---
 
-## 📈 Power BI Visualizations
+## Power BI Visualizations
 Once the data is cleaned and processed, it will be imported into **Power BI** for further analysis and visualization.
 
 ### **Key Visuals & Dashboards:**
@@ -105,34 +105,19 @@ Once the data is cleaned and processed, it will be imported into **Power BI** fo
 
 ---
 
-## 🚀 Next Steps: Expanding the Project
-To further enhance this project and make it **more appealing for Data Engineering (DE) and Data Analyst (DA) roles**, my next steps include:
+## Next Steps: Expanding the Project
+To further enhance this project, my next steps include:
 
-### 🔹 **Enhancing Power BI Integration**
-✅ **Create a UFC Power BI Dashboard** showcasing key fight statistics.
-✅ **Use DAX formulas** to calculate fighter win rates and performance metrics.
-✅ **Implement interactive filters** (e.g., by fighter, weight class, year).
-✅ **Deploy dashboard to Power BI Service** to demonstrate cloud reporting capabilities.
+### **Enhancing Power BI Integration**
+- **Create a UFC Power BI Dashboard** showcasing key fight statistics.
+- **Use DAX formulas** to calculate fighter win rates and performance metrics.
+- **Implement interactive filters** (e.g., by fighter, weight class, year).
+- **Deploy dashboard to Power BI Service** to demonstrate cloud reporting capabilities.
 
-### 🔹 **Adding More Data Engineering Features**
-✅ **Convert CSV to Parquet format** for improved performance.
-✅ **Automate data ingestion pipelines** using Python scripts.
-✅ **Optimize queries** inside Power BI for better performance (avoid subqueries when possible).
-✅ **Set up scheduled data refresh in Power BI Service** to automate updates.
+### **Adding More Data Engineering Features**
+**Convert CSV to Parquet format** for improved performance.
+**Automate data ingestion pipelines** using Python scripts.
+**Optimize queries** inside Power BI for better performance (avoid subqueries when possible).
+**Set up scheduled data refresh in Power BI Service** to automate updates.
 
----
 
-## 📌 Why This Project Matters
-- This project **combines my passion for UFC** with **data analytics and engineering**.
-- It demonstrates my ability to **handle real-world data**, clean it, analyze it, and visualize insights.
-- It highlights my proficiency in **Python, SQL, PySpark, and Power BI**—all critical skills for **Data Engineer and Data Analyst roles**.
-
-### 🎯 **Goal**: Build a UFC Analytics Dashboard that can be used by analysts, fight promoters, and sports bettors.
-
----
-
-## 📝 Author
-👤 **[Your Name]**  
-💼 Aspiring Data Engineer | Data Analyst  
-🔗 [LinkedIn Profile](#)  
-📂 [GitHub Repository](#)
